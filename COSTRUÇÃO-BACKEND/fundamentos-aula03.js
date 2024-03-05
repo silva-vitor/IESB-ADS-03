@@ -64,6 +64,104 @@ no IESB
 
 console.log(pessoaComTemplateString)
 
+// verificar o tipo de variável
+
+console.log("verificando o tipo de variável pessoaComTemplateString")
+console.log(typeof pessoaComTemplateString)
+
+//tipo number
+let numeroInteiro = 2000
+let numeroNegativo = -60
+let numeroFlutuante = 25.90
+
+console.log ( numeroInteiro)
+console.log ( numeroNegativo)
+console.log ( numeroFlutuante)
+
+//tipo array 
+//let listacheia = ["wolkeswagem","fiat","honda"]
+//let listaCheiaMisturada = [1,2,"nome", null, true]
+let lista =[]
+
+console.log(typeof lista)
+console.log(lista)
+
+lista. push("PrimeiroItem")
+
+console.log(lista)
+
+//lista.Pop()
+
+console.log(lista)
+
+//boolean
+true
+false
+
+//tipo object (tipo objeto)
+
+let pessoa ={
+
+    nome: "vitor",
+    idade: 23,
+    curso: "ADS",
+    semestre: "3/2024"
+
+    }
+
+    console.log("imprimindo o objeto pessoa")
+    console.log(pessoa)
+    console.log (typeof pessoa)
+    console.log (`Ola ${pessoa.nome}`)
+
+    // tipo NaN (not a number)
+
+    let teste = 10/ "olá"
+    console.log (teste)
+
+    //Tratamento de dados (string)
+    let texto = "Vitor Pereira da silva"
+    // .length // quantidade de caracteres do texto
+    console.log(texto.length)
+    
+    //texto em caixa alta
+    console.log(texto.toUpperCase())
+
+   // texto em caixa baixa
+    console.log(texto.toLowerCase()) 
+
+    // replace (substituir)
+    let valor="10,50,"
+    console.log("valor antes do replace: ", valor)
+    
+    valor =valor.replace(",", ".")
+    console.log( "valor depois do replace: ", valor)
+
+    //tratamento de dados (number)
+    let numero = 10.777777777777777777777777
+
+    //fixa o numero de casas do numero flutuante (tofixed)
+    console.log(numero.toFixed(2))
+
+    //transformar float para inteiro (parseInt)
+    console.log(Number.parseInt(numero))
+
+    let numerointeiro = 10
+
+    //tranformando inteiro para float 
+    console.log(Number.parseFloat(numerointeiro).toFixed(2))
+
+    let valorEmDolar = 10.54
+    
+    console.log(valorEmDolar.toLocaleString("pt-BR", {style:"currency", currency:"BRL"}))
+    console.log(valorEmDolar.toLocaleString("pt-BR", {style:"currency", currency:"USD"}))
+
+    let idadeUser = 24
+    console.log(Number(idadeUser))
+    console.log(Math.PI)
+    
+
+
 
 
 
