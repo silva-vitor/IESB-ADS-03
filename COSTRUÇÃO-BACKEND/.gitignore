@@ -11,6 +11,7 @@ fio-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+
 # Relatórios de diagnóstico (https://nodejs.org/api/report.html)
 relatório.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
