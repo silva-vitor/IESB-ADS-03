@@ -7,6 +7,7 @@ let votos_validos = Number (prompt("Votos validos?"));
 let porcentagem_branco = (votos_branco * 100) / total_de_eleitores
 let porcentagem_nulos = (votos_nulos * 100) / total_de_eleitores
 let porcentagem_validos = (votos_validos * 100) / total_de_eleitores
+  
 console.log("Porcentagem de votos em branco: ", porcentagem_branco ,"%")
 console.log("Porcentagem de votos nulos: ", porcentagem_nulos, "%")
 console.log("Porcentagem de votos validos: ", porcentagem_validos, "%")
