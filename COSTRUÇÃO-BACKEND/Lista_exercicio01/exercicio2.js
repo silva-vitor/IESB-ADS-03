@@ -1,13 +1,16 @@
 let prompt = require('prompt-sync') ();
 
-let total_de_eleitores = Number (prompt("Total de eleitores?"));
-let votos_branco = Number (prompt("Votos em branco?"));
-let votos_nulos = Number (prompt("Votos nulos?"));
-let votos_validos = Number (prompt("Votos validos?"));
-let porcentagem_branco = (votos_branco * 100) / total_de_eleitores
-let porcentagem_nulos = (votos_nulos * 100) / total_de_eleitores
-let porcentagem_validos = (votos_validos * 100) / total_de_eleitores
-  
-console.log("Porcentagem de votos em branco: ", porcentagem_branco ,"%")
-console.log("Porcentagem de votos nulos: ", porcentagem_nulos, "%")
-console.log("Porcentagem de votos validos: ", porcentagem_validos, "%")
+let votosBrancos = Number (prompt("Quantos votos brancos?"));
+let votosNulos = Number (prompt("Quantos votos nulos?"));
+let votosValidos = Number (prompt("Quantos votos validos?"));
+
+let totalVotos = votosBrancos + votosNulos + votosValidos;
+
+let porcentagemVotosBrancos = (votosBrancos / totalVotos) * 100;
+let porcentagemVotosNulos = (votosNulos / totalVotos) * 100;
+let porcentagemVotosValidos = (votosValidos / totalVotos) * 100;
+
+console.log("Porcentagem de votos brancos: ", porcentagemVotosBrancos);
+console.log("Porcentagem de votos nulos: ", porcentagemVotosNulos);
+console.log("Porcentagem de votos validos: ", porcentagemVotosValidos);
+console.log("Total de votos: ", totalVotos)
