@@ -8,3 +8,4 @@ mutiplica= soma * numero1;
 
 console.log("soma: ", soma);
 console.log("mutiplica: ", mutiplica);
+
