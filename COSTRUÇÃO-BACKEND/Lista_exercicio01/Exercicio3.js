@@ -1,7 +1,7 @@
-let prompt = require('prompt-sync') ();
+const prompt = require('prompt-sync') ();
 
-let salario = Number (prompt("Qual o seu salario? R$"));
-let reajuste= Number (prompt("quantos porcento de reajuste?"));
-let novosalario =  (1+ reajuste / 100) *salario ;
+const salario = Number (prompt("Qual o seu salario? R$"));
+const reajuste= Number (prompt("quantos porcento de reajuste?"));
+const novosalario =  (1+ reajuste / 100) *salario ;
 
 console.log("Novo salario:R$ ", novosalario);

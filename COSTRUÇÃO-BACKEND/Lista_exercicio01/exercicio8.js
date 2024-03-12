@@ -1,7 +1,7 @@
-let prompt = require('prompt-sync') ();
+const prompt = require('prompt-sync') ();
 
-let raio = Number (prompt("Qual o valor do raio?"));
-let altura = Number (prompt("Qual o valor da altura?"));
+const raio = Number (prompt("Qual o valor do raio?"));
+const altura = Number (prompt("Qual o valor da altura?"));
 
 val= Math.PI;
 raio=raio*raio;

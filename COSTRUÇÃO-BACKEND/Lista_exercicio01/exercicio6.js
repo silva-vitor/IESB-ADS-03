@@ -1,10 +1,10 @@
-let prompt = require('prompt-sync') ();
+const prompt = require('prompt-sync') ();
 
 
- let numeroCarros = Number (prompt("Quantos carros foram vendidos?"));
- let valorTotalVendido = Number (prompt("Qual o valor total de vendas?"));
- let salerioFixo = Number (prompt("Qual o valor do salerio fixo?"));
- let valorPorCarroVendido = Number (prompt("Qual o valor por carro vendido?"));
+ const numeroCarros = Number (prompt("Quantos carros foram vendidos?"));
+ const valorTotalVendido = Number (prompt("Qual o valor total de vendas?"));
+ const salerioFixo = Number (prompt("Qual o valor do salerio fixo?"));
+ const valorPorCarroVendido = Number (prompt("Qual o valor por carro vendido?"));
  
 
 
