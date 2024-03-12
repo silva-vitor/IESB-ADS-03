@@ -1,7 +1,7 @@
-let prompt = require('prompt-sync') ();
+const prompt = require('prompt-sync') ();
 
-let nota1 = Number (prompt("Nota da P1 ?"));
-let nota2 = Number (prompt("Nota da P2 ?"));
+const nota1 = Number (prompt("Nota da P1 ?"));
+const nota2 = Number (prompt("Nota da P2 ?"));
 
 
 nota1= nota1 * 0.4
