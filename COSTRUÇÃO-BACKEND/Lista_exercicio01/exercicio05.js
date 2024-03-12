@@ -1,8 +1,8 @@
-let prompt = require('prompt-sync') ();
+const prompt = require('prompt-sync') ();
 
-let valorCusto = Number(prompt("qual o valor de custo do veiculo ? R$"));
-let valorDistribuidor= Number(prompt("qual a porcentagem do distribuidor ? "));
-let valorImpostos= Number(prompt("qual a porcentagem dos impostos ? "));
+const valorCusto = Number(prompt("qual o valor de custo do veiculo ? R$"));
+const valorDistribuidor= Number(prompt("qual a porcentagem do distribuidor ? "));
+const valorImpostos= Number(prompt("qual a porcentagem dos impostos ? "));
 
 
  custoDistribuidor = valorCusto * valorDistribuidor/100;
