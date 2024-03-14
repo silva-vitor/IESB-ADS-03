@@ -1,5 +1,5 @@
     //Condicionais if
-
+/*
  var num1 =3;
 
 if(num1 === 3 ) {
@@ -35,7 +35,7 @@ console.log(nem3)
 
 
 console.log(nem4)  
-*/
+
 
 
     // month
@@ -127,9 +127,60 @@ console.log(nem4)
           }
 
           var result = sum(2,3);
-          output(result);
+          output(result);*/
 
-          
+//criando um objeto completo 
+
+obj= {
+    nameA: {
+        first: 'vitor',
+        last: 'silva'
+},
+address:'ceilandia'
 
 
+};
+console.log(obj.address);
+/*
+//função 
+    function Book (title,pages, isbn){
+        this.title = title;
+        this.pages = pages;
+        this.isbn = isbn;
+    }
+    //para instanciar essa classe, podemos usar o codigo a seguir
+    let book = new Book ('Estrutura de dados', 406, '978-85-7522-553-0');
+    //Acessando suas propriedades
+    console.log(book.title);//exibir o titulo do livro
+    book.title = 'Estrutura de dados e algoritimos em JavaScript';//alterar o titulo do livro
+    console.log(book.title);//exibir o novo titulo do livro
+    console.log('Este livro tem ' + book.pages + ' paginas.');//exibir o numero de paginas do livro
+*/
+ /* function Book (title, pages, isbn){
+    this.title = title;
+    this.pages = pages;
+    this.isbn = isbn;
+}
+//para iststanciar essa classe, podemos usar o codigo a seguir
+let book = new Book ('Estrutura de dados', 406, '978-85-7522-553-0');
+//Podemos declarar e usar uma função/metodo, veja:
+Book.prototype.printTitle = function(){
+    console.log(this.title);
+}
+book.printTitle();*/
 
+function Book (title, pages, isbn){
+    this.title = title;
+    this.pages = pages;
+    this.isbn = isbn;
+    this.printIsbn = function(){
+        console.log('ISBN: ' + this.isbn);
+    }
+}
+//para iststanciar essa classe, podemos usar o codigo a seguir
+let book = new Book ('Estrutura de dados', 406, '978-85-7522-553-0');
+//Podemos declarar e usar uma função/metodo, veja:
+Book.prototype.printTitle = function(){
+    console.log(this.title);
+}
+book.printIsbn()
