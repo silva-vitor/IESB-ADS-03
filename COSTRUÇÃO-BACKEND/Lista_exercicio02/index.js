@@ -36,6 +36,39 @@ app.post('/ex1', (req, res )=>{
     res.send( `Aquantidade media:${estoqueMedio}  ` )
 })
 
+/*7. Faça uma api para ler o código e o preço de 15 produtos, calcular e escrever:
+• O maior preço lido; e
+• A média aritmética dos preços dos produtos*/
+app.post('/ex7', (req, res)=>{
+    const corpo = req.body 
+    let lista = []
+    corpo.forEach(produto => {
+       lista.push(produto)
+      
+    });
+    let soma = 0 
+    lista.forEach(produto=>{
+        soma = soma + produto.preco;
+    })
+    const mediaPrecos = soma / lista.length
+    //calcular o maior preço
+   let maiorPreco = 0
+    //logica
+    lista.forEach(produto=>{
+        if(produto.preco > maiorPreco){
+            maiorPreco = produto.preco
+        }
+    })
+   
+   
+
+    const resultado = {
+        precoMedia:mediaPrecos.toFixed(2)
+    }
+    res.json(resultado)
+})
+
+
 
 app.listen(3000, ()=>{
     console.log("porta da aplicação e http://localhhost:3000")

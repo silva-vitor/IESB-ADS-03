@@ -1,16 +1,15 @@
 {
-  "name": "lista_exercicio02",
+  "name": "estrutura-dados",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "Aula05.js",
   "scripts": {
-    "start" : "nodemon",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.1",
     "nodemon": "^3.1.0"
   }
 }
