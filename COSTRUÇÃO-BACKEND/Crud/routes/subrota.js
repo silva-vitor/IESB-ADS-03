@@ -4,18 +4,18 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/subrota', (req , res)=>{
-    res.send("tutorial get")
+    res.send("subrota get")
 })
 
 router.post('/subrota', (req , res)=>{
-    res.send("tutorial post")
+    res.send(" subrota post")
 })
 router.put('/subrota', (req , res)=>{
-    res.send("tutorial put")
+    res.send("subrota put")
 })
 router.delete('/subrota', (req , res)=>{
-    res.send("tutorial delete")
+    res.send("subrota delete")
 })
 //exporto o router
 module.exports= router
-//este router tambem e um middleware
+//este router tambem e um middlewar

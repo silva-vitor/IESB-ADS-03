@@ -1,68 +1,64 @@
-//PILHAS
+class Stack {
+   constructor() {
+       this.items = [];
+   }
 
-class Starkc{
-    constructor(){
-        this.items = [];
-    }
-    push(element){
-        //adiciona um novo item à pilha
-        this.items.push(element);
-    }
-    pop(){
-        //remove o último item da pilha
-        return this.pop();
-    }
-    peek(){
-        //Devolve o elemento que està no topo da pilha 
-        return this.items[this.items.length - 1];
-     }
-     isEmpty(){
-        //verifica se a pilha está vazia
-        return this.items.length === 0;
-     }
-     clear(){
-        //limpa a pilha
-        this.items = [];
-     }
-     size(){
-        //informa o tanho da pilha
-        return this.items.length;
-     }
-     print(){
-        //imprime os itens da pilha no console
-        console.log(this.items.toString)
-     }
+   // Adiciona um elemento ao topo da pilha
+   push(element) {
+       this.items.push(element);
+   }
+
+   // Remove o elemento do topo da pilha e o retorna
+   pop() {
+       if (this.isEmpty()) {
+           return "Underflow";
+       }
+       return this.items.pop();
+   }
+
+   // Retorna o elemento do topo da pilha sem removê-lo
+   peek() {
+       return this.items[this.items.length - 1];
+   }
+
+   // Verifica se a pilha está vazia
+   isEmpty() {
+       return this.items.length === 0;
+   }
+
+   // Retorna o tamanho da pilha
+   size() {
+       return this.items.length;
+   }
+   print(){
+      console.log(this.items.toString())
+      }
+   
 }
 
-console.log("stack")
-// criando (instancia) um obijeto stark (pilha)
-const stack = new Starkc();
-//  verifica se a pilha starkc está vazia
+// Criando uma instância da pilha
+const stack = new Stack();
+
+// Verificando se a pilha está vazia
 console.log(stack.isEmpty());
 
-console.log("push")
-//adicionar elementos
+// Adicionando elementos no topo da pilha
 stack.push(5);
 stack.push(8);
-
-//exibindo elementos do topo da pilha
 console.log(stack.peek());
 
-//adisionando um novo elemento
+// Adicionando outro elemento
 stack.push(11);
 
-console.log("size")
-// tamanho da pilha
+// Exibindo o tamanho da pilha
 console.log(stack.size());
 
-console.log("isEmpty")
-//verifica se a pilha está vazia
-console.log(stack.isEmpty());
 
-//adisionando um novo elemento
-stack.push(15);
+// verificaa se a pilha ta vazia
+console.log(stack.isEmpty())
 
-console.log("print")
-//mostra todos os elementos da pilha
-stack.print();
-
+//acrecimo de outro numero 
+stack.push(15)
+ 
+//mostra o tamnho da pilha
+stack.print()
