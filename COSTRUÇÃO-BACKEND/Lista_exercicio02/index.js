@@ -412,19 +412,129 @@ app.get ('/ex8', (req, res )=>{
           Superior a 3.500 | 500 reais
     • Salário a receber do funcionário é igual ao salário líquido mais a gratificação.
  */
-app.get('/ex9', (req , res)=>{
+app.get('/ex9/:salarioMinimo/:horasTrabalhadas/:dependentes/:horasExtras', (req , res)=>{
     const salarioMinimo = Number(req.params.salarioMinimo);
     const horasTrabalhadas  = Number (req.params.horasTrabalhadas);
-    const depensentes = Number(req.params.depensentes);
+    const dependentes = Number(req.params.dependentes);
     const horasExtras = Number(req.params.horasExtras);
 
     const valorHoras = salarioMinimo / 5;
      const salarioMensal = horasTrabalhadas * valorHoras;
      const valorExtra=  (valorHoras * 50) /100
-     const valorDependente = depensentes * 32
-     const salarioBruta =  salarioMensal + depensentes
+     const valorDependente = dependentes * 32
+     const salarioBruta =  salarioMensal + (valorExtra * horasExtras )+ valorDependente
+
+    let irrf;
+    
+
+     if(salarioBruta <2000){
+        irrf = 0;
+    }
+      if(salarioBruta <=5000 ){
+        irrf= salarioBruta *0.1  
+    }else {
+        irrf = salarioBruta * 0.2 
+    }
+
+    const salarioLiquido = salarioBruta - irrf
+
+    let gratificacao;
+    if(salarioLiquido<= 3.500){
+         gratificacao = 1000
+        
+    }else{
+         gratificacao= 500
+        
+      
+    }
+
+   const salarioReceber = salarioLiquido + gratificacao
+     res.json(`Seu salario e R$${salarioReceber}`)
      
 })
+//QUERY
+app.get('/ex9', (req,res)=>{
+    const salarioMinimo = Number(req.query.salarioMinimo);
+    const horasTrabalhadas  = Number (req.query.horasTrabalhadas);
+    const dependentes = Number(req.query.dependentes);
+    const horasExtras = Number(req.query.horasExtras);
+
+    const valorHoras = salarioMinimo / 5;
+     const salarioMensal = horasTrabalhadas * valorHoras;
+     const valorExtras=  (valorHoras * 50) /100
+     const valorDependente = dependentes * 32
+     const salarioBruta =  salarioMensal + (valorExtras * horasExtras) + valorDependente
+
+    let irrf;
+    
+
+     if(salarioBruta <2000){
+        irrf = 0;
+    }
+      if(salarioBruta <=5000 ){
+        irrf= salarioBruta *0.1  
+    }else {
+        irrf = salarioBruta * 0.2 
+    }
+
+    const salarioLiquido = salarioBruta - irrf
+
+    let gratificacao;
+    if(salarioLiquido<= 3.500){
+         gratificacao = 1000
+        
+    }else{
+         gratificacao= 500
+        
+      
+    }
+
+   const salarioReceber = salarioLiquido + gratificacao
+     res.json(`Seu salario e R$${salarioReceber}`)
+     
+})
+// BODY
+ app.post( '/ex9', (req,res)=>{
+    const salarioMinimo = Number(req.body.salarioMinimo);
+    const horasTrabalhadas  = Number (req.body.horasTrabalhadas);
+    const dependentes = Number(req.body.dependentes);
+    const horasExtras = Number(req.body.horasExtras);
+
+    const valorHoras = salarioMinimo / 5;
+     const salarioMensal = horasTrabalhadas * valorHoras;
+     const valorExtras=  (valorHoras * 50) /100
+     const valorDependente = dependentes * 32
+     const salarioBruta =  salarioMensal + (valorExtras * horasExtras) + valorDependente
+
+    let irrf;
+    
+
+     if(salarioBruta <2000){
+        irrf = 0;
+    }
+      if(salarioBruta <=5000 ){
+        irrf= salarioBruta *0.1  
+    }else {
+        irrf = salarioBruta * 0.2 
+    }
+
+    const salarioLiquido = salarioBruta - irrf
+
+    let gratificacao;
+    if(salarioLiquido<= 3.500){
+         gratificacao = 1000
+        
+    }else{
+         gratificacao= 500
+        
+      
+    }
+
+   const salarioReceber = salarioLiquido + gratificacao
+     res.json(`Seu salario e R$${salarioReceber}`)
+ })
+
+
 
 app.listen(3000, ()=>{
     console.log("porta da aplicação e http://localhhost:3000")
