@@ -50,11 +50,12 @@ router.post('/produtos', (req, res) => {
         )
     }
 })
-/router.put('/produtos/:id', (req, res) => {
+
+//alteração de produtos
+router.put('/produtos/:id', (req, res) => {
     const id = req.params.id;
     const novosDados = req.body;
 
-    //alteração de produtos
     if (!novosDados.nome || !novosDados.preco) {
         res.status(400).json({ mensagem: "Nome e preço são obrigatórios!" });
     } else {
