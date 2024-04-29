@@ -1,0 +1,111 @@
+
+const express = require('express');
+const router = express.Router();
+
+let listaLivros = [
+    {
+        id: 1,
+        nome: 'Justiceiro',
+        autor: 'Garth Ennis',
+        valor: 79.90
+    },
+    {
+        id: 2,
+        nome: 'Os Simpsons',
+        autor: 'Matt Groening',
+        valor: 89.90
+    }
+];
+
+// Busca todos os livros
+router.get('/livros', (req, res) => {
+    res.json(listaLivros)
+});
+
+// Busca de livro pelo identificador
+router.get('/livros/:id', (req, res) => {
+    const id = req.params.id;
+    const livro = listaLivros.find(livro => livro.id == id);
+    if (livro) {
+        res.status(200).json(livro);
+    } else {
+        res.status(404).json("Livro não encontrado");
+    }
+});
+
+// Cadastro de livro
+router.post('/livros', (req, res) => {
+    const livro = req.body;
+    if (!livro.nome || !livro.autor || !livro.valor) {
+        res.status(400).json({ mensagem: 'Nome, autor e valor devem ser informados' });
+    } else { 
+        const novoLivro = {
+            id: Math.round(Math.random() * 1000),
+            no : livro.nome,
+            autor: livro.autor,
+            valor: livro.valor
+        };
+        listaLivros.push(novoLivro);
+        res.status(201).json(novoLivro);
+    }
+});
+
+// Atualização de livro
+router.put('/livros/:id', (req, res) => {
+    const id = req.params.id;
+    const livroIndex = listaLivros.findIndex(livro => livro.id == id);
+    if (livroIndex !== -1) {
+        listaLivros[livroIndex] = req.body;
+        res.status(200).json(listaLivros[livroIndex]);
+    } else {
+        res.status(404).json("Livro não encontrado");
+    }
+});
+
+// Deletar livro
+router.delete('/livros/:id', (req, res) => {
+    const id = req.params.id;
+    const livroIndex = listaLivros.findIndex(livro => livro.id == id);
+    if (livroIndex !== -1) {
+        const livro = listaLivros[livroIndex];
+        listaLivros.splice(livroIndex, 1);
+        res.status(200).json(livro);
+    } else {
+        res.status(404).json("Livro não encontrado");
+    }
+});
+
+// Busca de livros por autor
+router.get('/livros/autor/:autor', (req, res) => {
+   
+    const autor = req.params.autor;
+
+    const livrosDoAutor = listaLivros.filter(livro => livro.autor.toUpperCase() === autor.toUpperCase());
+
+    
+    if (livrosDoAutor.length > 0) {
+        res.status(200).json(livrosDoAutor);
+    } else {
+        res.status(404).json("Nenhum livro encontrado para o autor especificado");
+    }
+});
+
+// Calcular preço médio de todos os livros
+router.get('/livros/preco/media', (req, res) => {
+   
+    if (listaLivros.length === 0) {
+        res.status(404).json("Nenhum livro encontrado");
+        return;
+    }
+
+    
+    const totalPrecos = listaLivros.reduce((acc, livro) => acc + livro.valor, 0);
+    const media = totalPrecos / listaLivros.length;
+
+    
+    res.status(200).json({ media: media });
+});
+
+
+module.exports = router;
+
