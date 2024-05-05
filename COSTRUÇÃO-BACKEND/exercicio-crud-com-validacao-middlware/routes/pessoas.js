@@ -50,23 +50,25 @@ router.get('/pessoas/:id', validarPessoa,(req, res)=>{
 
 // cadastra pessoa
 
-router.post('/pessoas', validarAtributos,(req, res)=>{
-    const dados = req.body
-
-    const pessoa = {
-        id: Math.round(Math.round() * 1000),
-        nome: dados.nome,
-
-        idade:dados.idade,
-
-        email: dados.email,
-
-        telefone: dados.telefone
+router.post('/pessoas', (req, res)=>{
+    const pessoa = req.body
+    if(!pessoa.nome || !pessoa.idade || !pessoa.email || !pessoa.telefone){
+        res.status(400).json( "Nome, idade, email e telefone são obrigatórios!")
+    }
+    else{
+        const cadastrar = {
+            id: listaPessoas.length + 1,
+            nome: pessoa.nome,
+            idade: pessoa.idade,
+            email: pessoa.email,
+            telefone: pessoa.telefone
+        }
+    
+    listaPessoas.push(cadastrar)
+    res.status(200).json("pessoa cadastrada com sucesso!", cadastrar)
 
     }
-    listaPessoas.push(pessoa)
-
-    res.status(200).json("Pessoa cadastrado com sucesso!",pessoa)
+    
 })
  // Altera pessoa
  router.put('/pessoas/:id', validarAtributos, validarPessoa, (req, res)=>{

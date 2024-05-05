@@ -8,10 +8,9 @@ require('dotenv').config(); //busca as variáveis do env
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 
-mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@banco01.tmztktw.mongodb.net/?retryWrites=true&w=majority`,
-{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@banco01.tmztktw.mongodb.net/?retryWrites=true&w=majority`)
  .then(() => console.log("Conectado ao banco MongoDB"))
- .catch((err) => console.error("Erro ao conectar ao banco MongoDB:", err));
+ .catch((err) => console.log("Erro ao conectar ao banco MongoDB:", err));
 
 // Middleware para permitir o uso de JSON no corpo das solicitações
 app.use(express.json());
