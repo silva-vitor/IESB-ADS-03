@@ -3,17 +3,15 @@ const express = require ('express')
 
     const ProdutoController= require('../controllers/ProdutoController')
 
-    router.get ('/', (req, res )=>{
-        res.json ("OK")
-    })
 
     // rotas de Produtos
 
-// Rota para obter todos os produtos
-router.get('/', ProdutoController.getAll);
+router.post('/produtos',ProdutoController.create)
+router.get('/produtos', ProdutoController.getAll)
+router.get('/produtos/:id', ProdutoController.getById)
+router.put('/produtos/:id', ProdutoController.update)
+router.delete('/produtos/:id', ProdutoController.remove)
 
-// Rota para criar um novo produto
-router.post('/', ProdutoController.create);
 
 
 

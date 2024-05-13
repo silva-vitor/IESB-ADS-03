@@ -1,12 +1,8 @@
     const Produto = require ('../models/produtos')
 
 
-// busca
- async function getAll(req, res){
-    const produtos = await Produto.find()
-    res.json(produtos)
- }
- //criar 
+
+ 
 
  async function create (req, res){
    try{ const produto = new Produto(req.body)
@@ -22,6 +18,47 @@
         )
      }
  }
+ async function getAll(req,res){
+    res.json(await Produto.find())
+}
+
+ async function getById(req, res){
+        const produto = await Produto.findById(req.params.id)
+        if(produto){
+            res.json(produto)
+        }else{
+            res.status(404).json({mensagem:"Produto não encontrado"})
+        }
+    }
+    async function update(req, res) {
+        try {
+            const produtoAtulizado = await Produto.findByIdAndUpdate(req.params.id, req.body)
+            res.json(produtoAtulizado)
+        } catch (error) {
+            console.error("Erro ao atualizar produto: ", error)
+            res.status(400).json({
+                mensagem: "Erro ao atualizar produto!",
+                erro: error.message
+            })
+        }
+    }
+    
+    async function remove(req,res){
+        await Produto.findByIdAndDelete(req.params.id)
+        res.json({
+            mensagem: "produto excuido com sucesso"
+        })
+    }
+
+
+module.exports = {
+create,
+getAll,
+getById,
+update,
+remove
+
+}
 
 
 
