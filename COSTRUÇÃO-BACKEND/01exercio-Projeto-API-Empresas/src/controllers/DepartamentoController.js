@@ -1,10 +1,10 @@
-const Cargo = require('../models/Cargo');
+const Departamento = require('../models/Departamento');
 
 async function create(req, res) {
     try {
-        const cargo = new Cargo(req.body);
-        const cargoCriado = await cargo.save();
-        res.status(201).json(cargoCriado);
+        const departamento = new Departamento(req.body);
+        const departamentoCriado = await departamento.save();
+        res.status(201).json(departamentoCriado);
     } catch (error) {
         res.status(500).json({ mensagem: error.message });
     }
@@ -12,8 +12,8 @@ async function create(req, res) {
 
 async function getAll(req, res) {
     try {
-        const cargos = await Cargo.find();
-        res.json(cargos);
+        const departamento = await Departamento.find();
+        res.json(departamento);
     } catch (error) {
         res.status(500).json({ mensagem: error.message });
     }
@@ -21,9 +21,9 @@ async function getAll(req, res) {
 
 async function getById(req, res) {
     try {
-        const cargo = await Cargo.findById(req.params.id);
-        if (cargo) {
-            res.json(cargo);
+        const departamento = await Departamento.findById(req.params.id);
+        if (departamento) {
+            res.json(departamento);
         } else {
             res.status(404).json({ mensagem: "Cargo não encontrado" });
         }
@@ -34,9 +34,9 @@ async function getById(req, res) {
 
 async function update(req, res) {
     try {
-        const cargoAtualizado = await Cargo.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (cargoAtualizado) {
-            res.json(cargoAtualizado);
+        const departamentoAtualizado = await Departamento.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (departamentoAtualizado) {
+            res.json(departamentoAtualizado);
         } else {
             res.status(404).json({ mensagem: "Cargo não encontrado" });
         }
@@ -47,8 +47,8 @@ async function update(req, res) {
 
 async function remove(req, res) {
     try {
-        const cargoExcluido = await Cargo.findByIdAndDelete(req.params.id);
-        if (cargoExcluido) {
+        const departamentoExcluido = await Departamento.findByIdAndDelete(req.params.id);
+        if (departamentoExcluido) {
             res.json({ mensagem: "Cargo excluído com sucesso" });
         } else {
             res.status(404).json({ mensagem: "Cargo não encontrado" });

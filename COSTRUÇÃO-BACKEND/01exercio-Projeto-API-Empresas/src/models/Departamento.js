@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const schema = new mongoose.Schema({
     nome: {
         type: String,
@@ -7,14 +8,11 @@ const schema = new mongoose.Schema({
     descricao: {
         type: String,
         required: false
-    },
-    salario: {
-        type: Number, 
-        required: true
     }
 }, {
-    timestamps: true
+    timestamps: true 
 });
 
-const Cargo = mongoose.model('cargo', schema); 
-module.exports = Cargo;
+const Departamento = mongoose.model('departamento', schema);
+
+module.exports = Departamento;
