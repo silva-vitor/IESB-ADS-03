@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
 require('dotenv').config(); // Carrega as variáveis de ambiente do arquivo .env
+const mongoose = require('mongoose');
+
 
 // Extrai as variáveis de ambiente
 const DB_USERNAME = process.env.DB_USERNAME;
@@ -14,4 +15,4 @@ function main() {
         .catch(error => console.log("Erro ao conectar ao banco de dados:", error));
 }
 
-module.exports = main
+module.exports = main;

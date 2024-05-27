@@ -1,17 +1,17 @@
 const express = require('express')
-const app = express()
+const app   = express()
 const PORT = 3000
 
 const DBconnection = require('./database/connection')
+DBconnection()
 
 app.use(express.json())
 
-const routes = require('./routes/router')
-app.use(routes)
+//const routes = require('./routes/routes')
+//app.use(routes)
 
 
-app.listen(PORT,()=>{
+app.listen(PORT,() =>{
     
-    DBconnection()
-    console.log("Aplicação rodando ")
+    console.log("aplicação rodando ")
 })
