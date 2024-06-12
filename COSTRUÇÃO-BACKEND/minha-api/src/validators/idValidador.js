@@ -1,15 +1,14 @@
-const mongoose = require('mongoose')
-
+const mongoose = require('mongoose');
 
 function validarId(req, res, next) {
-    const isValid = mongoose.Types.ObjectId.isValid(req.params.id)
-    if(isValid){
-        next()
+    const isValid = mongoose.Types.ObjectId.isValid(req.params.id);
+    if (isValid) {
+        next();
     } else {
-        res.status(400).json({mensgem: "id inválido"})
+        res.status(400).json({ mensagem: "ID inválido" });
     }
 }
 
 module.exports = {
     validarId
-}
+};

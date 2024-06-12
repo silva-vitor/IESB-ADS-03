@@ -8,24 +8,23 @@ async function getAll(req, res){
   res.json(await Produtos.find().populate(['fornecedor']))
 }
 
-async function getById(req, res){
-    const produtos = await Produtos.findById(req.params.id).populate(['fornecedor'])
-    if(produtos){
-        req.json(produtos)
-
-        
-    }else{
-        res.status(404).json({mensagem: "produto não encontrado digite um id valido "})
+async function getById(req, res) {
+    
+    const produto = await Produtos.findById(req.params.id).populate(['fornecedor']);
+    if (produto) {
+        res.json(produto);
+    } else {
+        res.status(404).json({ mensagem: "produto não encontrado" });
     }
 }
-async function update(req,res){
-    const produtoAtualizado= await Produtos.findBydyAndUpdate(req.params.id, req.body,{new: true})
-    if(produtoAtualizado){
-        res.json(produtoAtualizado)
-    }else{
-        res.status(404).json({mensagem: "Produto não encontrado para fazer a atualização enforme um id valido "})
+async function update(req, res) {
+   
+    const produtoAt = await Produtos.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (produtoAt) {
+        res.json(produtoAt);
+    } else {
+        res.status(404).json({ mensagem: " não encontrado" });
     }
-
 }
  async function remove(req, res){
     const produtoDeletado= await Produtos.findByIdAndDelete(req.params.id)
@@ -34,6 +33,7 @@ async function update(req,res){
     }else{
         res.status(404).json({mensagem: "Produto não encontrado enforme um id valido paque seja excluido"})
     }
+    
  }
   
 module.exports = {
@@ -41,5 +41,6 @@ module.exports = {
     getAll,
     getById,
     update,
+
     remove
 }

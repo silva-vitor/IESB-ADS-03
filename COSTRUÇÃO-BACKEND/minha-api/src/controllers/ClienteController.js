@@ -26,12 +26,15 @@ async function update(req,res){
     req.status(404).json({ mensagem: "cliente nao encontrado id invalido"});
     }
 }
-async function remove(req,res){
-    const ClienteDeletado = await Cliente.findBayIdDelete(req.params.id)
-    if(ClienteDeletado){
-        res.json(ClienteDeletado),ClienteDeletado
-    }else{
-        res.status(404).json({mensagem: "Cliente não encontrado id invalido !"})
+async function remove(req, res){
+    const clienteDel = await Cliente.findByIdAndDelete(req.params.id)
+    if(clienteDel){
+        res.json({mensagem:" deletado com sucesso!",
+              clienteDel
+        })
+    }
+    else{
+        res.status(400).json({mensagem:"Erro ao deletar !"})
     }
 }
 module.exports= {

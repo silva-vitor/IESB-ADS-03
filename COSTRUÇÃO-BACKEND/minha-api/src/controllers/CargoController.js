@@ -28,16 +28,17 @@ async function getAll(req , res){
         req.status(404).json({ mensagem : "CArgo nao encontrado !"})
     }
  }
- async function remove(req, res ){
-    const ExcluirCargo = await cargo.findByIdAndDelete(req.parames.Id)
-    if(ExcluirCargo){
-        res.json(ExcluirCargo)
-
-    }else{
-        res.status(404).json({ mensagem: "Cargo não encontrado enflrme um id valido !"})
+ async function remove(req, res){
+    const procurarDELETAR = await Cargo.findByIdAndDelete(req.params.id)
+    if(procurarDELETAR){
+        res.json({mensagem:" deletado com sucesso!",
+            procurarDELETAR
+        })
     }
- }
-
+    else{
+        res.status(400).json({mensagem:"Erro ao deletar !"})
+    }
+}
 module.exports = {
     create,
     getAll,

@@ -6,7 +6,7 @@ const schema = new mongoose.Schema(
             type: String,
             required: true
         },
-        cpf: {
+        cpfCnpj: {
             type: String,
             required: true
         },
@@ -51,6 +51,6 @@ const schema = new mongoose.Schema(
     }
 )
 
-const Funcionario = mongoose.model('funcionario', schema)
+const Funcionario = mongoose.model('Funcionario', schema)
 
 module.exports = Funcionario

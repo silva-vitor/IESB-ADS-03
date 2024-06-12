@@ -29,6 +29,6 @@ const schema = new mongoose.Schema({
 }
 )
 
-const Cliente = mongoose.model('cliente',schema)
+const Cliente = mongoose.model('Cliente',schema)
 
 module. exports=Cliente

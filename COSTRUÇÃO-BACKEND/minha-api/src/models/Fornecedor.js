@@ -1,29 +1,27 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema(
     {
-        nome:{
+        nome: {
             type: String,
             required: true
         },
-        email:{
-            type:String,
-            required: true
-        },
-        enpreza:{
+        email: {
             type: String,
             required: true
         },
-        telefone:{
+        empresa: {
             type: String,
-            required:true
+            required: true
         },
+        telefone: {
+            type: String,
+            required: true
+        }
     },
     {
         timestamps: true
     }
-)
+);
 
- const Fornecedor = mongoose.model('fornecedor',schema)
-
- module.exports = Fornecedor
+module.exports = mongoose.model('Fornecedor', schema);
