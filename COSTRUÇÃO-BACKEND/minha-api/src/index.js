@@ -1,25 +1,30 @@
-const express = require('express');
-const app = express();
-const PORT = 3000;
+const express = require('express')
+const app = express()
+const porta = 3000
 
-
-app.use(express.json());
-
-const DBconnection = require('./database/connection')
- 
-
-
-const autenticarRoutes= require('./routes/autentificar.routes')
-app.use(autenticarRoutes)
-
-const {checarToken} = require('./validators/autenticacaoValidator')
-
-const routes = require('./routes/routes')
-app.use("/",checarToken,routes)
+const DBConection = require('./database/connection')
 
 
 
-app.listen(PORT, () => {
-   DBconnection()
-    console.log("Aplicação rodando");
-});
+
+//middleware
+app.use(express.json())
+const autenticacaoRoutes = require('./routes/autentificar.routes')
+app.use(autenticacaoRoutes)
+
+
+const {checarTOKEN} = require('./validators/autenticacaoValidator')
+
+const router = require('./routes/routes')
+app.use('/', checarTOKEN, router)
+
+app.use(router)
+
+
+
+
+
+app.listen(porta, ()=> {
+    DBConection() 
+    console.log('Aplicação rodando na porta', porta)
+})

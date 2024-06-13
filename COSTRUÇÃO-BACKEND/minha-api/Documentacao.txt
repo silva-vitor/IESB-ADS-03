@@ -1,0 +1,779 @@
+{
+	"info": {
+		"_postman_id": "0c5f3748-0a45-41b8-8e57-2545d67e01c1",
+		"name": "minha-api",
+		"description": "documentação da api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33176078"
+	},
+	"item": [
+		{
+			"name": "autentificacao",
+			"item": [
+				{
+					"name": "criar login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"vitor\",\r\n    \"email\": \"vitor@gmail.com\",\r\n    \"senha\": \"270420000\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/auth/registro",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"auth",
+								"registro"
+							]
+						},
+						"description": "criar login para poder acesar as informação"
+					},
+					"response": []
+				},
+				{
+					"name": "loga",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vp986788@gmail.com\",\r\n    \"senha\": \"270420\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/auth/login",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Pedir autorização para jerau touken se vc tiver cadastro"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funcionario",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Juliana Silva\",\r\n    \"cpfCnpj\": \"01234567890\",\r\n    \"email\": \"juliana@example.com\",\r\n    \"telefone\": \"(21)980054321\",\r\n    \"dataContratacao\": \"2024-05-12\",\r\n    \"dataNascimento\": \"1993-11-28\",\r\n    \"genero\": \"Feminino\",\r\n    \"endereco\": {\r\n        \"cep\": \"87654321\",\r\n        \"uf\": \"RJ\",\r\n        \"logradouro\": \"Rua das Flores\",\r\n        \"localidade\": \"Rio de Janeiro\",\r\n        \"bairro\": \"Ipanema\",\r\n        \"numero\": \"800\",\r\n        \"complemento\": \"Casa 3\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						},
+						"description": "usado para criar funcionario"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665c62b7fe12c6a36a1c0bd",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665c62b7fe12c6a36a1c0bd"
+							]
+						},
+						"description": "Usado para puxa o funcionario pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"endereco\": {\r\n            \"cep\": \"12345678\",\r\n            \"uf\": \"SP\",\r\n            \"logradouro\": \"Avenida Brasil\",\r\n            \"localidade\": \"São Paulo\",\r\n            \"bairro\": \"Centro\",\r\n            \"numero\": \"100\",\r\n            \"complemento\": \"Apto 101\"\r\n        },\r\n        \"nome\": \"ana pereira da s\",\r\n        \"cpfCnpj\": \"12345678900\",\r\n        \"email\": \"ana@example.com\",\r\n        \"telefone\": \"11984454321\",\r\n        \"dataContratacao\": \"2023-05-01T00:00:00.000Z\",\r\n        \"dataNascimento\": \"1990-01-01T00:00:00.000Z\",\r\n        \"genero\": \"Feminino\",\r\n        \"createdAt\": \"2024-06-09T15:11:39.658Z\",\r\n        \"updatedAt\": \"2024-06-09T15:11:39.658Z\",\r\n        \"__v\": 0\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665c62b7fe12c6a36a1c0bd",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665c62b7fe12c6a36a1c0bd"
+							]
+						},
+						"description": "Usado para atualizar os dados do cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario/6665e2cf6134a78ee3f03542",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario",
+								"6665e2cf6134a78ee3f03542"
+							]
+						},
+						"description": "Usado para deleta o funcionario pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/funcionario",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"funcionario"
+							]
+						},
+						"description": "Usado para busca todos os funcionario cadastrado"
+					},
+					"response": []
+				}
+			],
+			"description": "todas as informação como far para verifica os dados dos funcionario"
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"João da Silva\",\r\n    \"cpfCnpj\": \"12345678911\",\r\n    \"telefone\": \"(11)987554321\",\r\n    \"endereco\": {\r\n        \"cep\": \"12345678\",\r\n        \"uf\": \"SP\",\r\n        \"logradouro\": \"Rua das Flores\",\r\n        \"localidade\": \"São Paulo\",\r\n        \"bairro\": \"Centro\",\r\n        \"numero\": \"100\",\r\n        \"complemento\": \"Apto 101\"\r\n    }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/cliente",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "para criar os cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/cliente",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Para busca todos os cliente"
+					},
+					"response": []
+				},
+				{
+					"name": "atu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"endereco\": {\r\n            \"cep\": \"12345678\",\r\n            \"uf\": \"SP\",\r\n            \"logradouro\": \"Rua das Flores\",\r\n            \"localidade\": \"São Paulo\",\r\n            \"bairro\": \"Centro\",\r\n            \"numero\": \"100\",\r\n            \"complemento\": \"Apto 101\"\r\n        },\r\n       \r\n        \"nome\": \"João da pereira \",\r\n        \"cpfCnpj\": \"12345678911\",\r\n        \"telefone\": \"(11)987554321\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/cliente/66661568d14579f4e4b2cd49",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cliente",
+								"66661568d14579f4e4b2cd49"
+							]
+						},
+						"description": "Para atualizar um cpliente especifico"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "Busca um cliente especifico"
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/cliente/66661568d14579f4e4b2cd49",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cliente",
+								"66661568d14579f4e4b2cd49"
+							]
+						},
+						"description": "A paga o cliente que informado o id dele"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fornesedor",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Ana Silva\",\r\n    \"email\": \"ana.silva@example.com\",\r\n    \"empresa\": \"EcoClean\",\r\n    \"telefone\": \"5543210987\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/fornecedor",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"fornecedor"
+							]
+						},
+						"description": "Para cria um fornecedo"
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/fornecedor",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"fornecedor"
+							]
+						},
+						"description": "Vai busca todos os fornecedores"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/fornecedor/66677dcbfbd5a6fd97bf7ff7",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"fornecedor",
+								"66677dcbfbd5a6fd97bf7ff7"
+							]
+						},
+						"description": "vai bisca por id"
+					},
+					"response": []
+				},
+				{
+					"name": "atu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"nome\":\"cloves\",\r\n    \"email\": \"cloves@gmail.com\",\r\n    \"empresa\": \"zoetes\",\r\n    \"telefone\": \"6199666665\"\r\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/fornecedor/66677dcbfbd5a6fd97bf7ff7",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"fornecedor",
+								"66677dcbfbd5a6fd97bf7ff7"
+							]
+						},
+						"description": "Vai atualizar uma pessoa especifica"
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/fornecedor/66677dcbfbd5a6fd97bf7ff7",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"fornecedor",
+								"66677dcbfbd5a6fd97bf7ff7"
+							]
+						},
+						"description": "vai deleta uma pessoa especifoca"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "produtos",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Bravecto\",\r\n    \"lote\": \"BRA12345\",\r\n    \"dataValidade\": \"2024-12-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/produto",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"produto"
+							]
+						},
+						"description": "vai cria os produtos"
+					},
+					"response": []
+				},
+				{
+					"name": "busca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/produto",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"produto"
+							]
+						},
+						"description": "vai busca todos os produtos cadastrado"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/produto/666786667334de0128a66769",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"produto",
+								"666786667334de0128a66769"
+							]
+						},
+						"description": "vai busca uma pessoa especifica"
+					},
+					"response": []
+				},
+				{
+					"name": "at",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"simparic\",\r\n    \"lote\": \" 2344343a22\",\r\n    \"dataValidade\": \"2024-04-24\",\r\n    \"fornecedor\":\"66677e28fbd5a6fd97bf7ffb\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/produto/666786667334de0128a66769",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"produto",
+								"666786667334de0128a66769"
+							]
+						},
+						"description": "vai atualir qual quer informação do produto"
+					},
+					"response": []
+				},
+				{
+					"name": "del",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/produto/666789168bc90d5f57700b5a",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"produto",
+								"666789168bc90d5f57700b5a"
+							]
+						},
+						"description": "vai apaga o produto especifoco"
+					},
+					"response": []
+				}
+			],
+			"description": "para criar os produtos"
+		},
+		{
+			"name": "pedido",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"6665f6b84d8668184f0984f0\",\r\n    \"idCliente\": \"66661811051f8905ce6f8d0c\",\r\n    \"produtos\": [\r\n        {\r\n            \"idProduto\": \"66677e28fbd5a6fd97bf7ffb\",\r\n            \"quantidade\": 1,\r\n            \"precoUnitario\": 50\r\n        }\r\n    ],\r\n    \"valorTotal\": 50,\r\n    \"dataPedido\": \"2024-06-10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/pedido",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Para cria os pedido deacordo com as informação"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/pedido",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Para busca todos os pedido"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6668ec367d99ecd67d5ffe26\",\r\n    \"idFuncionario\": \"6665f6b84d8668184f0984f0\",\r\n    \"idCliente\": \"66661811051f8905ce6f8d0c\",\r\n    \"produtos\": [\r\n        {\r\n            \"idProduto\": \"66677e28fbd5a6fd97bf7ffb\",\r\n            \"quantidade\": 1,\r\n            \"precoUnitario\": 100,\r\n            \"_id\": \"6668ec367d99ecd67d5ffe27\"\r\n        }\r\n    ],\r\n    \"valorTotal\": 100,\r\n    \"dataPedido\": \"2024-06-10T00:00:00.000Z\",\r\n    \"createdAt\": \"2024-06-12T00:30:46.614Z\",\r\n    \"updatedAt\": \"2024-06-12T00:30:46.614Z\",\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/pedido/6668ec367d99ecd67d5ffe26",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"pedido",
+								"6668ec367d99ecd67d5ffe26"
+							]
+						},
+						"description": "para busca um pedido especifico"
+					},
+					"response": []
+				},
+				{
+					"name": "at",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "para atualizar um pedido especifico"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"description": "para deleta um produto"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cargo",
+			"item": [
+				{
+					"name": "criar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"nome\": \"Supervisor de Pecuária\",\r\n    \"descricao\": \"Responsável pela gestão e supervisão das operações de pecuária, incluindo a alimentação, saúde e reprodução dos animais.\",\r\n    \"salario\": 5000,\r\n    \"ativoInativo\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/cargo",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cargo"
+							]
+						},
+						"description": "para criar um cargo"
+					},
+					"response": []
+				},
+				{
+					"name": "buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/cargo",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cargo"
+							]
+						},
+						"description": "busca um casrgo"
+					},
+					"response": []
+				},
+				{
+					"name": "id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/cargo/6668f6a32aa0ad1ba3b65793",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cargo",
+								"6668f6a32aa0ad1ba3b65793"
+							]
+						},
+						"description": "para busca um cargo pelo seu endentificador"
+					},
+					"response": []
+				},
+				{
+					"name": "at",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"nome\": \"Supervisor de Pecuária\",\r\n    \"descricao\": \"Responsável pela gestão e supervisão das operações de pecuária, incluindo a alimentação, saúde e reprodução dos animais.\",\r\n    \"salario\": 5000,\r\n    \"ativoInativo\": false,\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ApiUrl}}/cargo/6668f6a32aa0ad1ba3b65793",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cargo",
+								"6668f6a32aa0ad1ba3b65793"
+							]
+						},
+						"description": "para atualizar as informação do pargo"
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{ApiUrl}}/cargo/6668f68e2aa0ad1ba3b65791",
+							"host": [
+								"{{ApiUrl}}"
+							],
+							"path": [
+								"cargo",
+								"6668f68e2aa0ad1ba3b65791"
+							]
+						},
+						"description": "para deletar um cargo"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZwOTg2Nzg4QGdtYWlsLmNvbSIsImlhdCI6MTcxODMxNjE0NCwiZXhwIjoxNzE4MzE5NzQ0fQ.ZmKwqya1lX8jwYe3S-EiBeXYJFzyZPnEUSabnckphDs",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ApiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
