@@ -61,8 +61,8 @@ async function registrar(req, res) {
             //Atenção, gmail precisa ter uma autenticação de 2 fatores, recomendo usar o outlook em EMAIL_USER no seu .env
             from: process.env.EMAIL_USER, //Pegamos o email que colocamos no arquivo .env (NÃO ESQUEÇA DA SENHA)
             to: email, // Envia o e-mail para o novo usuário registrado
-            subject: "Obrigado por se registrar!",
-            text: "Volte sempre!"
+            subject: "Registo efetuado !",
+            text: "Agradecemos a preferencia!"
         })
         res.status(201).json({ mensagem: "Usuário cadastrado com sucesso!" })
     } catch (error) {
