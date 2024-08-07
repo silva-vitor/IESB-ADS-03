@@ -1,77 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário</title>
 </head>
 <body>
-    <a href="introducao.html">Pagina Principal</a>
-    <br>
-    <a href="Tabela.html">Tabela</a>
-    <h1>Usuarios</h1>
-   <form >
-    <label for="nome">Nome:</label>
-    <input type="text" >
-   </br>
-    <label for="telefone">telefone:</label>
-    <input type="text" >
-   </br>
-   <label for="nome">E-mail:</label>
-   <input type="text" >
-   
-</br>
-  
-    <label for="nome">Senha:</label>
-    <input type="text" >
-    
-</br>
-    <label for="nome">Sexo: </label>
-    <input type="radio" name="sexo" id="masculino">
-    <label for="masculino">Masculino</label>
-    <input type="radio" name="sexo" id="masculino">
-    <label for="feminino">Feminino</label></br>
+    <ul>
+        <li><a href="introducao.html" target="_blank">Home </a></li>
+        <li><a href="Tabela.html" target="_blank"> Tabelas</a></li>
+    </ul>
 
+    <h1>Usuários</h1>
 
+    <form action="">
+       Nome: <input type="text" name="Nome" id=""><br>
+       Telefone:<input type="number" name="Telefone" id=""><br>
+       Email:<input type="email" name="Email" id=""><br>
+       Senha:<input type="password" name="Senha" id=""><br>
+       Sexo Masculino: <input type="radio" name="escolha" id=""> Feminino:<input type="radio" name="escolha" id=""><br>
+       Uf: <select name="seleção" id="">
+        <option value="">Selecione</option><br>
+        <option value="">Df</option><br>
+        <option value="">Goiás</option><br>
+        <option value="">Minas Gerais</option><br>
+       </select>
+       Cidade: <select name="seleção" id="">
+        <option value="">Selecione</option><br>
+        <option value="">Ceilândia</option><br>
+        <option value="">Taguatinga</option><br>
+        <option value="">Planaltina</option><br>
+       </select>
 
- <p>  <label for="uf">UF</label>
-   <select name="uf" id="uf">
-    <option value=""></option>
-    <option value="DF">DF</option>
-    <option value="AL">AL</option>
-    <option value="AP">AP</option>
-    <option value="AM">AM</option>
-    <option value="BA">BA</option>
-    <option value="CE">CE</option>
-   </p> </br>
-
-    <p><div class="checkboxes">
-        <input type="checkbox" id="musica" name="hobbies" value="musica">
+       <fieldset>
+        <legend align="left">Hobbies</legend>
+        Musica:<input type="checkbox" name="musica" id=""><br>
+        Futebol:<input type="checkbox" name="futebol" id=""><br>
+        Artes:<input type="checkbox" name="artes" id=""><br>
+        Jogos:<input type="checkbox" name="jogos" id=""><br>
+        Cozinha:<input type="checkbox" name="cozinha" id=""><br>
+       </fieldset><br>
        
-<label for="musica">Música</label><br>
+       Observação: 
+       <form>
+       
+       <textarea cols="33" rows="5" name="comentario" id=""></textarea><br>
+       <input type="submit" value="Salvar"> <input type="submit" value="Limpar"> <input type="submit" value="Voltar">
 
-<input type="checkbox" id="futebol" name="hobbies" value="futebol">
- 
-<label for="futebol">Futebol</label><br>
-  
-<input type="checkbox" id="artes" name="hobbies" value="artes">
- 
-<label for="artes">Artes</label><br>
-  
-<input type="checkbox" id="jogos" name="hobbies" value="jogos">
-   
-<label for="jogos">Jogos</label><br>
-   
-<input type="checkbox" id="cozinhar" name="hobbies" value="cozinhar">
-     
-<label for="cozinhar">Cozinhar</label>
-  
-</div></p>
-<input type = "reset" value="limpar">
+    </form>
 
-    <input type = "submit"value=" salvar">
-        
-    <input type="submit" value="Enviar">
-   </form> 
+
+
+       
+
+
+    </form>
+    
 </body>
 </html>
