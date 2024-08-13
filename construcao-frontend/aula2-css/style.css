@@ -1,0 +1,34 @@
+h2{color: red;
+    text-align: center;
+     text-indent: 50px;
+        border-width: 10px;
+        border-style: groove;
+        border-color:#006400;
+        background: chartreuse;
+    }
+    P{
+        text-indent: 50px;
+    }
+    .destaque{
+        color: #000;
+        text-align: center;
+        padding: 15px;
+
+
+    }
+    h1{
+        color: red;
+        text-align: center;
+    }
+    h2{
+        color: red;
+        text-align: center;
+        
+    }
+    #principal{
+        color:blue;
+        font-size: 30px;
+        border: red solid 1px;
+        margin: 30px;
+        padding: 20px;
+    }
