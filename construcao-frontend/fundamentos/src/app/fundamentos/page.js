@@ -4,29 +4,29 @@ import Link from "next/link";
 
 
 
-export  default function Fundamentos(){
-    return (
+export default function Fundamentos() {
+  return (
 
-      
-        <>
-        <Cabecalho titulo=" fundamentos"/>
 
-        <Container>
+    <>
+      <Cabecalho titulo=" fundamentos" />
 
-              <Alert>
-                Atenção! Preste muita tenção.
-              </Alert>
-            
+      <Container>
 
-              <Link href="/">Pagina Inicial</Link><br/>
+        <Alert>
+          Atenção! Preste muita tenção.
+        </Alert>
 
-            <h1>Fundamentos</h1>
 
-            <p>Sucesso</p>
+        <Link href="/">Pagina Inicial</Link><br />
 
-            <Cabecalho titulo="vitor"sub="olha"/>
-          </Container>
-       </>
-       
-     )
+        <h1>Fundamentos</h1>
+
+        <p>Sucesso</p>
+
+        <Cabecalho titulo="vitor" sub="olha" />
+      </Container>
+    </>
+
+  )
 }
