@@ -5,8 +5,9 @@
   }
   
   .custom-carousel-image {
-    max-height: 800px; /* Aumente a altura máxima conforme necessário */
-    width: 100%; /* Ajuste a largura para preencher o contêiner */
-    object-fit: cover; /* Ajusta a imagem para preencher o contêiner sem distorcer */
+    max-height: 700px; /* Ajuste conforme necessário */
+    width: 100%; /* Garante que a imagem preencha o contêiner */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
   }
+  
   
