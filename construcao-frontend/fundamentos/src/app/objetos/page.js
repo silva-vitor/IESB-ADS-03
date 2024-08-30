@@ -34,16 +34,16 @@ export default function Objetos() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                    </Col>
+                    </Col> 
                 ))}
             </Row>
-
+     
 
 
             {carros.map(item => (
                 <p>{item.marca}</p>
             ))}
 
-        </Pagina>
+       </Pagina>
     )
 }

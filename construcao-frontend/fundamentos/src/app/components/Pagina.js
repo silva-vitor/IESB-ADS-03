@@ -5,11 +5,17 @@ export default function Pagina(props) {
         <>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="/fundamentos">Fundamentos</Navbar.Brand>
+                    <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="/array">Carros</Nav.Link>
-                        <Nav.Link href="/nomes">Nomes</Nav.Link>
+                        <Nav.Link href="/array">Array</Nav.Link>
                         <Nav.Link href="/clientes">Clinetes</Nav.Link>
+                        <Nav.Link href="/fundamento">fundamentos</Nav.Link>
+                        <Nav.Link href="/nomes">nomes</Nav.Link>
+                        <Nav.Link href="/numeros">Numeros</Nav.Link>
+                        <Nav.Link href="/objetos">Carros</Nav.Link>
+                        <Nav.Link href="/disney">Disney</Nav.Link>
+
+                        
 
                     </Nav>
                 </Container>
