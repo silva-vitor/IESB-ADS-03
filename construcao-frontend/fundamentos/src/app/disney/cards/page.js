@@ -17,12 +17,12 @@ export default function Page() {
     }, [])
     return (
         <Pagina titulo=" Disney cards">
-            <Row md={3}>
+            <Row md={4}>
 
                 {personagens.map(item => (
-                    <Col key={item.id}>
+                    <Col key={item.id} className="mt-3">
                         <Card >
-                            <Card.Img style={{ height: 300 }} variant="top" src={item.imageUrl} />
+                            <Card.Img style={{ height: 150 }} variant="top" src={item.imageUrl} />
                             <Card.Body>
                                 <Card.Title>{item.name}</Card.Title>
 

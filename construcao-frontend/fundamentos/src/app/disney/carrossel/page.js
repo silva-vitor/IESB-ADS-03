@@ -1,36 +1,48 @@
+
+
+
 'use client'
 
 import Pagina from "@/app/components/Pagina";
 import apiDisney from "@/services/apiDisney";
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
+import { Table } from "react-bootstrap";
 
 export default function Page() {
-    const [personagens, setPersonagens] = useState([]);
-
+    const [personagens, setPersonages] = useState([]) 
     useEffect(() => {
-        apiDisney.get('character').then(resultado => {
-            setPersonagens(resultado.data.data);
-        });
-    }, []);
-
+        apiDisney.get('character').then(resultado =>{
+            setPersonages(resultado.data.data)
+        })
+    }, [])
     return (
-        <Pagina titulo="Disney Carrossel">
-            <Carousel>
-                {personagens.map((item, setPersonagens) => (
-                    <Carousel.Item key={setPersonagens} interval={900}>
-                        <img style={{ height: 800 , width: 700 }}
-                            src={item.imageUrl}
-                            alt={item.name}
-                            className="d-block w-100"
-                        />
-                        <Carousel.Caption>
-                            <h3>{item.name}</h3>
-                            <p>{item.description || "No description available."}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                ))}
-            </Carousel>
+        <Pagina titulo="Disney Tabela">
+
+            <Table className="mt-3" striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Foto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {personagens.map(item => (
+                        <tr key={item._id}>
+                            <td>{item._id}</td>
+                            <td>{item.name}</td>
+                            <td>
+                                <img src={item.imageUrl} height={100} />
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
+
+
+
+
         </Pagina>
-    );
+    )
 }

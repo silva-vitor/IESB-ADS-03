@@ -18,10 +18,10 @@ export default function Page() {
     }, [])
     return (
         <Pagina titulo="Disney/Tabela">
-            <Table>
+            <Table className="mt-3">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>id</th>
                         <th>Name</th>
                         <th>Image</th>
                     </tr>
@@ -32,7 +32,7 @@ export default function Page() {
                             <td>{setPersonages + 1}</td>
                             <td>{item.name}</td>
                             <td>
-                                <img src={item.imageUrl} alt={item.name} style={{ width: '50px', height: '50px' }} />
+                                <img src={item.imageUrl}  style={{ width: '50px', height: '50px' }} />
                             </td>
                         </tr>
                     ))}
