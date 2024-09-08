@@ -10,7 +10,7 @@ const apiMovie = axios.create({
 
     }
 })
-
+      
 export default apiMovie
 
 
