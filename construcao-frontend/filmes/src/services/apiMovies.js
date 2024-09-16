@@ -7,6 +7,8 @@ const apiMovie = axios.create({
     } ,
     headers: {
         Authorization: 'Bearer '
+        // +process.env.NEXT_PUBLIC_API
+
     }
 })
 

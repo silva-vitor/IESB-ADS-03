@@ -1,35 +1,26 @@
 import { Alert, Container } from "react-bootstrap";
-import Cabecalho from "../components/Cabecalho";
+import Cabecalho from "@/app/components/Cabecalho";
 import Link from "next/link";
-import Pagina from "../components/Pagina";
-
-
+import Pagina from "@/app/components/Pagina";
 
 export default function Fundamentos() {
   return (
+    <Pagina>
+      <Cabecalho titulo="Fundamentos" />
 
+      <Container>
+        <Alert variant="warning">
+          Atenção! Preste muita atenção.
+        </Alert>
 
-    <>
-      <Pagina>
-        <Cabecalho titulo=" fundamentos" />
+        <Link href="/">Página Inicial</Link><br />
 
-        <Container>
+        <h1>Fundamentos</h1>
 
-          <Alert>
-            Atenção! Preste muita tenção.
-          </Alert>
+        <p>Sucesso</p>
 
-
-          <Link href="/">Pagina Inicial</Link><br />
-
-          <h1>Fundamentos</h1>
-
-          <p>Sucesso</p>
-
-          <Cabecalho titulo="vitor" sub="olha" />
-        </Container>
-      </Pagina>
-    </>
-
-  )
+        <Cabecalho titulo="Vitor" sub="Olha" />
+      </Container>
+    </Pagina>
+  );
 }
